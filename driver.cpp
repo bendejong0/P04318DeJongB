@@ -23,7 +23,7 @@ long int collectEmeralds(const int& numBaskets, const int& numMinutes) {
 	srand(static_cast<unsigned int>(time(0)));
 
 	for (size_t i = 0; i < numBaskets; i++) {
-		baskets.push(rand() % 10 + 1); // i decided there can be 1-10 emeralds
+		baskets.push(rand() % 100 + 1); // i decided there can be 1-100 emeralds
 	}
 
 	unsigned long collectedEmeralds{ 0 };
@@ -39,33 +39,33 @@ long int collectEmeralds(const int& numBaskets, const int& numMinutes) {
 int main() {
 
 	cout << "**** Dorothy and Emeralds ****\n\n";
-	cout << "Enter the number of baskets: ";
+	cout << "\nEnter the number of baskets: ";
 	int numBaskets;
 	cin >> numBaskets;
 	bool runLoop = true;
 
-	cout << "Enter the number of minutes: ";
+	cout << "\nEnter the number of minutes: ";
 	int numMinutes;
 	cin >> numMinutes;
 
 	if (numBaskets == 0 || numMinutes == 0) {
-		cout << "Dorothy has gathered 0 emeralds!";
+		cout << "\nDorothy has gathered 0 emeralds!";
 		runLoop = false;
 	}
 	while(numMinutes < 0) {
 		cout << "Number of minutes must be greater than or equal to 0\n";
-		cout << "Enter the number of minutes: ";
+		cout << "\nEnter the number of minutes: ";
 		cin >> numMinutes;
 	}
 	while (numBaskets < 0) {
 		cout << "Number of baskets must be greater than or equal to 0\n";
-		cout << "Enter the number of baskets: ";
+		cout << "\nEnter the number of baskets: ";
 		cin >> numBaskets;
 	}
 
 	if (runLoop) {
 		long int collectedEmeralds = collectEmeralds(numBaskets, numMinutes);
-		cout << "Dorothy has gathered " << collectedEmeralds << " emeralds!";
+		cout << "\nDorothy has gathered " << collectedEmeralds << " emeralds!";
 	}
 
 
